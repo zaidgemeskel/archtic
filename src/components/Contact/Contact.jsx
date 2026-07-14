@@ -13,7 +13,7 @@ import styles from "./Contact.module.css";
 const SOCIALS = [
   { id: "linkedin", label: "LinkedIn", icon: TbBrandLinkedin, href: "#" },
   { id: "instagram", label: "Instagram", icon: TbBrandInstagram, href: "#" },
-  { id: "behance", label: "Behance", icon: TbBrandBehance, href: "#" },
+  
 ];
 
 export default function Contact() {
