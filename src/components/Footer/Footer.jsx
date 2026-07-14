@@ -23,7 +23,7 @@ export default function Footer() {
         <div className={styles.socials}>
           <a href="#" aria-label="LinkedIn"><TbBrandLinkedin /></a>
           <a href="#" aria-label="Instagram"><TbBrandInstagram /></a>
-          <a href="#" aria-label="Behance"><TbBrandBehance /></a>
+          {/* <a href="#" aria-label="Behance"><TbBrandBehance /></a> */}
         </div>
       </div>
 
@@ -31,7 +31,7 @@ export default function Footer() {
         <span className={styles.copyLine}>
           <TbCopyright aria-hidden="true" /> {year} Dawit Mebrahtom. All rights reserved.
         </span>
-        <span>Architecture Portfolio 2026-2027</span>
+        {/* <span>Architecture Portfolio 2026-2027</span> */}
       </div>
     </footer>
   );
