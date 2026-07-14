@@ -1,0 +1,128 @@
+:root {
+  /* -- Type -- */
+  --font-display: "Fraunces", "Georgia", serif;
+  --font-body: "Inter", -apple-system, BlinkMacSystemFont, sans-serif;
+
+  /* -- Light theme (default) -- */
+  --stone: #efece4;
+  --stone-2: #e4dfd3;
+  --surface: #f7f5ef;
+  --ink: #16150f;
+  --ink-soft: #57534a;
+  --ink-faint: #8b8676;
+  --bronze: #97733c;
+  --bronze-light: #c9a468;
+  --line: rgba(22, 21, 15, 0.12);
+  --line-strong: rgba(22, 21, 15, 0.28);
+  --shadow: 0 20px 60px -25px rgba(22, 21, 15, 0.35);
+
+  --container: 1240px;
+  --gutter: clamp(20px, 5vw, 64px);
+}
+
+[data-theme="dark"] {
+  --stone: #121110;
+  --stone-2: #1b1a17;
+  --surface: #18171438;
+  --surface: #1a1815;
+  --ink: #efe9dc;
+  --ink-soft: #b9b2a1;
+  --ink-faint: #79746a;
+  --bronze: #d1a666;
+  --bronze-light: #e6c491;
+  --line: rgba(239, 233, 220, 0.12);
+  --line-strong: rgba(239, 233, 220, 0.28);
+  --shadow: 0 20px 60px -25px rgba(0, 0, 0, 0.6);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  background: var(--stone);
+  color: var(--ink);
+  font-family: var(--font-body);
+  font-weight: 400;
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+  transition: background 0.4s ease, color 0.4s ease;
+}
+
+h1, h2, h3, h4 {
+  font-family: var(--font-display);
+  font-weight: 500;
+  line-height: 1.08;
+  margin: 0;
+  letter-spacing: -0.01em;
+}
+
+p {
+  margin: 0;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+button {
+  font-family: inherit;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+}
+
+ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+::selection {
+  background: var(--bronze);
+  color: var(--stone);
+}
+
+/* Focus visibility */
+a:focus-visible,
+button:focus-visible,
+input:focus-visible,
+textarea:focus-visible {
+  outline: 2px solid var(--bronze);
+  outline-offset: 3px;
+}
+
+.container {
+  width: 100%;
+  max-width: var(--container);
+  margin: 0 auto;
+  padding: 0 var(--gutter);
+}
+
+.eyebrow {
+  font-family: var(--font-body);
+  font-size: 0.72rem;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--bronze);
+  font-weight: 600;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+    scroll-behavior: auto !important;
+  }
+}

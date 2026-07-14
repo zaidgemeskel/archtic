@@ -1,0 +1,11 @@
+{
+  "name": "Dawit Mebrahtom — Architect",
+  "short_name": "Dawit Mebrahtom",
+  "icons": [
+    { "src": "/favicon-192.png", "sizes": "192x192", "type": "image/png" },
+    { "src": "/favicon-512.png", "sizes": "512x512", "type": "image/png" }
+  ],
+  "theme_color": "#16150f",
+  "background_color": "#efece4",
+  "display": "standalone"
+}
