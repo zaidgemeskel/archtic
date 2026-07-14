@@ -22,9 +22,30 @@ export default function Navbar() {
     return () => window.removeEventListener("scroll", onScroll);
   }, []);
 
+  // Close the mobile menu automatically if the viewport is resized back to desktop
   useEffect(() => {
-    document.body.style.overflow = open ? "hidden" : "";
-  }, [open]);
+    const onResize = () => {
+      if (window.innerWidth > 860) setOpen(false);
+    };
+    window.addEventListener("resize", onResize);
+    return () => window.removeEventListener("resize", onResize);
+  }, []);
+
+  const handleNavClick = (e, href) => {
+    e.preventDefault();
+    setOpen(false);
+
+    const target = document.querySelector(href);
+    if (!target) return;
+
+    // Give the mobile menu's collapse animation a moment to finish before
+    // scrolling, so the target position is measured correctly.
+    requestAnimationFrame(() => {
+      setTimeout(() => {
+        target.scrollIntoView({ behavior: "smooth", block: "start" });
+      }, 50);
+    });
+  };
 
   return (
     <motion.header
@@ -34,14 +55,23 @@ export default function Navbar() {
       transition={{ duration: 0.6, ease: "easeOut" }}
     >
       <div className={`${styles.inner} container`}>
-        <a href="#top" className={styles.brand}>
+        <a
+          href="#top"
+          className={styles.brand}
+          onClick={(e) => handleNavClick(e, "#top")}
+        >
           <span className={styles.brandMark}>DM</span>
           <span className={styles.brandName}>Dawit Mebrahtom</span>
         </a>
 
         <nav className={styles.links}>
           {LINKS.map((link) => (
-            <a key={link.href} href={link.href} className={styles.link}>
+            <a
+              key={link.href}
+              href={link.href}
+              className={styles.link}
+              onClick={(e) => handleNavClick(e, link.href)}
+            >
               {link.label}
             </a>
           ))}
@@ -75,7 +105,7 @@ export default function Navbar() {
                 key={link.href}
                 href={link.href}
                 className={styles.mobileLink}
-                onClick={() => setOpen(false)}
+                onClick={(e) => handleNavClick(e, link.href)}
               >
                 {link.label}
               </a>
