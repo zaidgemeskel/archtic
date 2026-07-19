@@ -15,10 +15,6 @@ export default function Hero() {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, ease: "easeOut" }}
         >
-          <span className="eyebrow">
-            Architecture Portfolio <TbPointFilled className={styles.dot} /> 2026-2027
-          </span>
-
           <h1 className={styles.title}>
             Dawit
             <br />
@@ -26,13 +22,13 @@ export default function Hero() {
           </h1>
 
           <p className={styles.role}>
-            Architect <TbPointFilled className={styles.dot} /> Landscape Architect &amp; Intermediate Architect
+            Architect <TbPointFilled className={styles.dot} /> Landscape
+            Architect &amp; Intermediate Architect
           </p>
 
           <p className={styles.lede}>
             Transforming ideas into spaces that inspire, perform, and endure
-            through residential, educational, commercial, and mixed-use
-            design.
+            through residential, educational, commercial, and mixed-use design.
           </p>
 
           <div className={styles.ctaRow}>
