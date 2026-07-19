@@ -1,4 +1,4 @@
-.gallery {
+/* .gallery {
   padding: clamp(80px, 12vw, 140px) 0;
   background: var(--stone);
 }
@@ -60,6 +60,244 @@
 .item:hover .caption {
   opacity: 1;
   transform: translateY(0);
+}
+
+@media (max-width: 640px) {
+  .masonry {
+    columns: 2 160px;
+  }
+} */
+.gallery {
+  padding: clamp(80px, 12vw, 140px) 0;
+  background: var(--stone);
+}
+
+.header {
+  margin-bottom: 40px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.heading {
+  font-size: clamp(2rem, 4vw, 2.8rem);
+}
+
+.filters {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-top: 18px;
+}
+
+.filterBtn {
+  padding: 9px 20px;
+  border-radius: 999px;
+  border: 1px solid var(--line-strong);
+  background: transparent;
+  color: var(--ink-soft);
+  font-size: 0.8rem;
+  letter-spacing: 0.03em;
+  cursor: pointer;
+  transition: background 0.25s ease, color 0.25s ease, border-color 0.25s ease;
+}
+
+.filterBtn:hover {
+  border-color: var(--bronze);
+  color: var(--ink);
+}
+
+.filterActive {
+  background: var(--ink);
+  border-color: var(--ink);
+  color: var(--stone);
+}
+
+.filterActive:hover {
+  border-color: var(--ink);
+  color: var(--stone);
+}
+
+.masonry {
+  columns: 4 220px;
+  column-gap: 18px;
+}
+
+.item {
+  margin: 0 0 18px;
+  break-inside: avoid;
+  position: relative;
+  border-radius: 14px;
+  overflow: hidden;
+  border: 1px solid var(--line);
+  cursor: pointer;
+  box-shadow: 0 0 0 rgba(0, 0, 0, 0);
+  transition: box-shadow 0.35s ease, border-color 0.35s ease;
+}
+
+.item:hover {
+  box-shadow: var(--shadow);
+  border-color: var(--line-strong);
+}
+
+.item img {
+  width: 100%;
+  display: block;
+  transition: transform 0.6s ease;
+}
+
+.item:hover img {
+  transform: scale(1.08);
+}
+
+.zoomIcon {
+  position: absolute;
+  top: 14px;
+  right: 14px;
+  width: 34px;
+  height: 34px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: color-mix(in srgb, var(--stone) 80%, transparent);
+  backdrop-filter: blur(6px);
+  border: 1px solid var(--line-strong);
+  color: var(--ink);
+  font-size: 1rem;
+  opacity: 0;
+  transform: translateY(-6px);
+  transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+.item:hover .zoomIcon {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.caption {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  padding: 30px 14px 12px;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  font-size: 0.8rem;
+  color: #f4efe4;
+  background: linear-gradient(
+    to top,
+    rgba(10, 9, 6, 0.88),
+    rgba(10, 9, 6, 0)
+  );
+  opacity: 0;
+  transform: translateY(6px);
+  transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+.item:hover .caption {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.captionCategory {
+  font-size: 0.62rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--bronze-light);
+  font-weight: 600;
+}
+
+/* Lightbox */
+.overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 200;
+  background: rgba(10, 9, 6, 0.78);
+  backdrop-filter: blur(6px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 24px;
+}
+
+.lightbox {
+  width: min(880px, 100%);
+  max-height: 90vh;
+  overflow-y: auto;
+  background: var(--stone);
+  border-radius: 20px;
+  border: 1px solid var(--line);
+  position: relative;
+}
+
+.closeBtn {
+  position: absolute;
+  top: 16px;
+  right: 16px;
+  z-index: 5;
+  width: 38px;
+  height: 38px;
+  border-radius: 50%;
+  border: 1px solid var(--line-strong);
+  background: color-mix(in srgb, var(--stone) 82%, transparent);
+  color: var(--ink);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  font-size: 1.1rem;
+}
+
+.lightboxImageWrap {
+  position: relative;
+  background: var(--ink);
+}
+
+.lightboxImageWrap img {
+  width: 100%;
+  max-height: 66vh;
+  object-fit: contain;
+  background: var(--ink);
+  display: block;
+  margin: 0 auto;
+}
+
+.navBtn {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 42px;
+  height: 42px;
+  border-radius: 50%;
+  border: 1px solid var(--line-strong);
+  background: color-mix(in srgb, var(--stone) 82%, transparent);
+  color: var(--ink);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  font-size: 1.2rem;
+}
+
+.navPrev {
+  left: 16px;
+}
+
+.navNext {
+  right: 16px;
+}
+
+.lightboxBody {
+  padding: 26px 32px 30px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.lightboxTitle {
+  font-size: 1.4rem;
 }
 
 @media (max-width: 640px) {

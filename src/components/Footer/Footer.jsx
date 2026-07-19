@@ -1,4 +1,10 @@
-import { TbBrandLinkedin, TbBrandInstagram, TbBrandBehance, TbCopyright } from "react-icons/tb";
+import {
+  TbBrandLinkedin,
+  TbBrandInstagram,
+  TbBrandBehance,
+  TbCopyright,
+  TbBrandFacebook,
+} from "react-icons/tb";
 import styles from "./Footer.module.css";
 
 export default function Footer() {
@@ -21,17 +27,23 @@ export default function Footer() {
         </nav>
 
         <div className={styles.socials}>
-          <a href="#" aria-label="LinkedIn"><TbBrandLinkedin /></a>
-          <a href="#" aria-label="Instagram"><TbBrandInstagram /></a>
-          {/* <a href="#" aria-label="Behance"><TbBrandBehance /></a> */}
+          <a href="#" aria-label="LinkedIn">
+            <TbBrandLinkedin />
+          </a>
+          <a href="#" aria-label="Instagram">
+            <TbBrandInstagram />
+          </a>
+          <a href="#" aria-label="Facebook">
+            <TbBrandFacebook />
+          </a>
         </div>
       </div>
 
       <div className={`${styles.bottom} container`}>
         <span className={styles.copyLine}>
-          <TbCopyright aria-hidden="true" /> {year} Dawit Mebrahtom. All rights reserved.
+          <TbCopyright aria-hidden="true" /> {year} Dawit Mebrahtom. All rights
+          reserved.
         </span>
-        {/* <span>Architecture Portfolio 2026-2027</span> */}
       </div>
     </footer>
   );

@@ -7,13 +7,14 @@ import {
   TbBrandInstagram,
   TbBrandBehance,
   TbSend,
+  TbBrandFacebook,
 } from "react-icons/tb";
 import styles from "./Contact.module.css";
 
 const SOCIALS = [
   { id: "linkedin", label: "LinkedIn", icon: TbBrandLinkedin, href: "#" },
   { id: "instagram", label: "Instagram", icon: TbBrandInstagram, href: "#" },
-  { id: "behance", label: "Behance", icon: TbBrandBehance, href: "#" },
+  { id: "facebook", label: "Facebook", icon: TbBrandFacebook, href: "#" },
 ];
 
 export default function Contact() {
@@ -77,10 +78,18 @@ export default function Contact() {
               })}
             </div>
 
-            <div className={styles.mapPlaceholder}>
+            {/* <div className={styles.mapPlaceholder}>
               <iframe
                 title="Location map"
                 src="https://maps.google.com/maps?q=Adigrat,Ethiopia&z=10&output=embed"
+                loading="lazy"
+                referrerPolicy="no-referrer-when-downgrade"
+              />
+            </div> */}
+            <div className={styles.mapPlaceholder}>
+              <iframe
+                title="Location map"
+                src="https://maps.google.com/maps?q=Mekelle,Ethiopia&z=12&output=embed"
                 loading="lazy"
                 referrerPolicy="no-referrer-when-downgrade"
               />
