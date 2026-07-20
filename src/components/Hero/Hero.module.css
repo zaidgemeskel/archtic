@@ -121,7 +121,7 @@
   object-fit: cover;
 }
 
-.frameTag {
+/* .frameTag {
   position: absolute;
   top: 16px;
   left: 16px;
@@ -134,7 +134,7 @@
   letter-spacing: 0.14em;
   padding: 6px 10px;
   border-radius: 999px;
-}
+} */
 
 .scrollCue {
   position: absolute;

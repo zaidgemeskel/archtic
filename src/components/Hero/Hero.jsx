@@ -47,9 +47,9 @@ export default function Hero() {
           animate={{ opacity: 1, scale: 1 }}
           transition={{ duration: 1, ease: "easeOut", delay: 0.2 }}
         >
-          <div className={styles.frameTag}>
+          {/* <div className={styles.frameTag}>
             DWG. 01 <TbPointFilled className={styles.dot} /> SITE VIEW
-          </div>
+          </div> */}
           <img src={heroCover} alt="Architectural elevation render" />
         </motion.div>
       </div>
